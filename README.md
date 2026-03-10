@@ -1,11 +1,10 @@
 <div align="center">
 
-<!-- Optional: Add a banner image here -->
-<img src="https://i.ibb.co.com/2YKN7nRM/IMG-20260214-174455-182.webp" alt="Universal Video Downloader Banner" width="100%" style="border-radius: 15px; margin-bottom: 20px;">
+<!-- <img src="https://i.ibb.co.com/2YKN7nRM/IMG-20260214-174455-182.webp" alt="Universal Video Downloader Banner" width="100%" style="border-radius: 15px; margin-bottom: 20px;"> -->
 
 # 🚀 Universal Social Media Video Downloader API
 
-**A robust, lightweight, and unified REST API built with Node.js & Express.js**  
+**A robust, lightweight, and unified REST API built with Node.js & Express.js**
 *Download videos from YouTube, TikTok, Instagram, and Facebook using a single endpoint.*
 
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
@@ -16,24 +15,27 @@
 *Developed & maintained by **[Maim Islam](#-developer)***
 
 ---
+
 </div>
 
 ## 📑 Table of Contents
+
 - [✨ Features](#-features)
 - [🎯 Supported Platforms](#-supported-platforms)
--[🚀 Quick Start (Local Setup)](#-quick-start-local-setup)
+- [🚀 Quick Start (Local Setup)](#-quick-start-local-setup)
 - [📡 API Documentation](#-api-documentation)
 - [📦 Response Structure](#-response-structure)
-- [☁️ Deployment Guide (Render)](#-deployment-guide-render)
+- [☁️ Deployment Guide (Render)](#️-deployment-guide-render)
 - [🛠️ Tech Stack](#️-tech-stack)
--[⚠️ Important Notes](#️-important-notes)
+- [⚠️ Important Notes](#️-important-notes)
+- [👨‍💻 Developer](#-developer)
 
 ---
 
 ## ✨ Features
 
 - 🔗 **Unified Endpoint:** Send any supported URL to a single route.
-- 🤖 **Smart Detection:** Automatically identifies the platform (YouTube, TikTok, FB, IG).
+- 🤖 **Smart Detection:** Automatically identifies the platform (YouTube, TikTok, Facebook, Instagram).
 - 🚫 **Watermark-Free:** Extracts clean TikTok videos without the watermark.
 - 📺 **Maximum Quality:** Prioritizes HD resolutions for YouTube and Facebook.
 - ⚡ **Blazing Fast:** Minimal overhead, optimized for quick response times.
@@ -45,10 +47,10 @@
 
 | Platform | Supported Content | Special Features |
 | :--- | :--- | :--- |
-| <img src="https://img.icons8.com/color/48/000000/youtube-play.png" width="20"/> **YouTube** | Videos & Shorts | Best available quality extraction |
-| <img src="https://img.icons8.com/color/48/000000/tiktok.png" width="20"/> **TikTok** | Public Videos | **No Watermark** |
-| <img src="https://img.icons8.com/color/48/000000/instagram-new.png" width="20"/> **Instagram** | Reels & Post Videos | Multi-resolution support |
-| <img src="https://img.icons8.com/color/48/000000/facebook-new.png" width="20"/> **Facebook** | Public Watch Videos | **HD preferred** over SD |
+| <img src="https://img.icons8.com/color/48/youtube-play.png" width="20"/> **YouTube** | Videos & Shorts | Best available quality extraction |
+| <img src="https://img.icons8.com/color/48/tiktok.png" width="20"/> **TikTok** | Public Videos | **No Watermark** |
+| <img src="https://img.icons8.com/color/48/instagram-new.png" width="20"/> **Instagram** | Reels & Post Videos | Multi-resolution support |
+| <img src="https://img.icons8.com/color/48/facebook-new.png" width="20"/> **Facebook** | Public Watch Videos | **HD preferred** over SD |
 
 ---
 
@@ -57,76 +59,85 @@
 Get the API running on your local machine in seconds.
 
 ### Prerequisites
+
 - [Node.js](https://nodejs.org/) (v18 or higher)
-- Git
+- [Git](https://git-scm.com/)
 
 ### Installation Steps
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/social-video-downloader.git
-   cd social-video-downloader
+**1. Clone the repository**
 
-Install dependencies
+```bash
+git clone https://github.com/YOUR_USERNAME/social-video-downloader.git
+cd social-video-downloader
+```
 
-code
-Bash
-download
-content_copy
-expand_less
+**2. Install dependencies**
+
+```bash
 npm install
+```
 
-Start the development server
+**3. Start the development server**
 
-code
-Bash
-download
-content_copy
-expand_less
+```bash
 npm start
+```
 
-Server will run on http://localhost:3000
+> Server will run on **http://localhost:3000**
 
-📡 API Documentation
-Base URL
+---
 
-If hosted locally: http://localhost:3000
-If hosted on Render: https://your-api-name.onrender.com
+## 📡 API Documentation
 
-1. Health Check
+### Base URL
+
+| Environment | URL |
+| :--- | :--- |
+| Local | `http://localhost:3000` |
+| Production | `https://your-api-name.onrender.com` |
+
+---
+
+### 1. Health Check
 
 Check if the API is active.
 
-Endpoint: GET /
+```
+GET /
+```
 
-Response:
+**Response:**
 
-code
-JSON
-download
-content_copy
-expand_less
+```json
 {
   "status": "online",
+  "name": "Universal Social Media Video Downloader API",
   "version": "1.0.0",
-  "usage": "/download?url=VIDEO_URL"
+  "usage": "/download?url=VIDEO_URL",
+  "supported_platforms": ["YouTube", "TikTok", "Instagram", "Facebook"]
 }
-2. Download Video
+```
+
+---
+
+### 2. Download Video
 
 The primary endpoint to fetch video data.
 
-Endpoint: GET /download
+```
+GET /download?url=VIDEO_URL
+```
 
-Query Parameter:
+**Query Parameters:**
 
-url (string, required) - The full URL of the video.
+| Parameter | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `url` | `string` | ✅ Yes | The full URL of the video |
 
-💡 Example Requests:
-code
-Bash
-download
-content_copy
-expand_less
+**Example Requests:**
+
+```bash
 # YouTube
 GET /download?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
@@ -141,13 +152,15 @@ GET /download?url=https://www.instagram.com/reel/ABC123xyz/
 
 # Facebook
 GET /download?url=https://www.facebook.com/watch/?v=987654321
-📦 Response Structure
-✅ Success Response (200 OK)
-code
-JSON
-download
-content_copy
-expand_less
+```
+
+---
+
+## 📦 Response Structure
+
+### ✅ Success Response `200 OK`
+
+```json
 {
   "status": "success",
   "platform": "tiktok",
@@ -155,85 +168,155 @@ expand_less
   "thumbnail": "https://cdn.example.com/thumbnail.jpg",
   "download": "https://cdn.example.com/video-no-watermark.mp4"
 }
-❌ Error Responses (400 / 500)
+```
 
-Unsupported Platform:
+### ❌ Error Responses `400 / 500`
 
-code
-JSON
-download
-content_copy
-expand_less
+**Missing URL Parameter:**
+
+```json
+{
+  "status": "error",
+  "message": "Missing 'url' query parameter. Usage: /download?url=VIDEO_URL"
+}
+```
+
+**Invalid URL Format:**
+
+```json
+{
+  "status": "error",
+  "message": "Invalid URL format"
+}
+```
+
+**Unsupported Platform:**
+
+```json
 {
   "status": "error",
   "message": "Unsupported platform. Supported: Instagram, TikTok, Facebook, YouTube"
 }
+```
 
-Extraction Failure:
+**Extraction Failure:**
 
-code
-JSON
-download
-content_copy
-expand_less
+```json
 {
   "status": "error",
   "platform": "instagram",
   "message": "Instagram extraction failed: Video is private or URL is invalid."
 }
-☁️ Deployment Guide (Render)
+```
 
-Deploying this API to Render is completely free and takes 5 minutes.
+---
 
-Push this code to your GitHub repository.
+## ☁️ Deployment Guide (Render)
 
-Go to Render Dashboard → New + → Web Service.
+Deploying this API to Render is **completely free** and takes under 5 minutes.
 
-Connect your GitHub repository.
+### Step 1 — Push to GitHub
 
-Use the following settings:
+```bash
+git init
+git add .
+git commit -m "feat: initial release"
+git remote add origin https://github.com/YOUR_USERNAME/social-video-downloader.git
+git branch -M main
+git push -u origin main
+```
 
-Environment: Node
+### Step 2 — Create a Render Account
 
-Build Command: npm install
+Go to 👉 **https://render.com** and sign up using your GitHub account.
 
-Start Command: npm start
+### Step 3 — Create a New Web Service
 
-Click Create Web Service.
+1. Dashboard → Click **"New +"**
+2. Select **"Web Service"**
+3. Connect your GitHub repository
 
-Render will auto-assign a URL (e.g., https://my-downloader.onrender.com).
+### Step 4 — Configure Service Settings
 
-🛠️ Tech Stack
-Component	Technology	Purpose
-Runtime	Node.js v18+	JavaScript execution environment
-Framework	Express.js	API routing and server setup
-HTTP Client	Axios	Making robust requests to external scrapers
-Security	CORS	Cross-Origin Resource Sharing management
+| Setting | Value |
+| :--- | :--- |
+| **Environment** | `Node` |
+| **Build Command** | `npm install` |
+| **Start Command** | `npm start` |
+| **Instance Type** | `Free` |
 
-Note: This API utilizes third-party engines (like cobalt.tools, tikwm, fastdl, getfvid) for extraction.
+### Step 5 — Deploy
 
-⚠️ Important Notes
+Click **"Create Web Service"**. Render will build and deploy automatically.
 
-Cold Starts: If deployed on Render's free tier, the API goes to sleep after 15 minutes of inactivity. The first request after sleeping might take ~30 seconds.
+> ⏱️ First deployment takes **2–4 minutes**. Once live, your API is available at:
+> ```
+> https://your-api-name.onrender.com/download?url=VIDEO_URL
+> ```
 
-Privacy Limits: The API can only extract publicly available videos. Private accounts or age-restricted videos will return an error.
+### 🔄 Auto-Deploy on Updates
 
-Fair Use: This tool is for educational purposes. Always respect copyright laws and the Terms of Service of the respective platforms.
+Every `git push` to the `main` branch triggers an automatic redeployment.
+
+```bash
+git add .
+git commit -m "fix: update handler"
+git push
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Component | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Runtime** | Node.js v18+ | JavaScript execution environment |
+| **Framework** | Express.js | API routing and server setup |
+| **HTTP Client** | Axios | Making requests to external scrapers |
+| **Security** | CORS | Cross-Origin Resource Sharing management |
+| **YouTube Engine** | cobalt.tools API | Video extraction & fallback |
+| **TikTok Engine** | tikwm.com API | No-watermark video extraction |
+| **Instagram Engine** | fastdl.app API | Reels & post video extraction |
+| **Facebook Engine** | getfvid.com | HD/SD video extraction |
+
+---
+
+## ⚠️ Important Notes
+
+- **Cold Starts:** On Render's free tier, the service sleeps after 15 minutes of inactivity. The first request after sleeping may take ~30 seconds to respond.
+- **Public Videos Only:** The API can only extract publicly available videos. Private accounts or age-restricted content will return an error.
+- **Rate Limits:** This API relies on free third-party services which may have usage limits. For production, consider a paid tier.
+- **Fair Use:** This tool is intended for educational and personal use. Always respect copyright laws and the Terms of Service of each platform.
+
+---
+
+## 👨‍💻 Developer
 
 <div align="center">
 
-👨‍💻 Developer
+<br>
 
-Maim Islam
-Full Stack Developer & API Engineer
+### Maim Islam
 
-![alt text](https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github)
+*Full Stack Developer & API Engineer*
 
+<br>
 
-![alt text](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
 
-If you find this project useful, please consider giving it a ⭐ on GitHub!
+<br>
 
-Released under the MIT License.
+*If you find this project useful, please consider giving it a ⭐ on GitHub!*
+
+<br>
+
+Released under the **MIT License**.
+
+<br>
+
+---
+
+*Made with ❤️ by **Maim Islam***
 
 </div>
