@@ -1,9 +1,9 @@
 <div align="center">
 
-# ðŸŽ¬ Universal Social Media Video Downloader API
+# 🎬 Universal Social Media Video Downloader API
 
 **A powerful, lightweight REST API built with Node.js & Express.js**  
-**to download videos from YouTube, TikTok, Instagram, and Facebook â€” using a single unified endpoint.**
+**to download videos from YouTube, TikTok, Instagram, and Facebook — using a single unified endpoint.**
 
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-brightgreen?logo=node.js)](https://nodejs.org)
 [![Express.js](https://img.shields.io/badge/Express.js-4.x-black?logo=express)](https://expressjs.com)
@@ -19,7 +19,7 @@
 
 ---
 
-## ðŸ“Œ Table of Contents
+## 📌 Table of Contents
 
 - [Overview](#-overview)
 - [Features](#-features)
@@ -35,39 +35,39 @@
 
 ---
 
-## ðŸŒ Overview
+## 🌐 Overview
 
-The **Universal Social Media Video Downloader API** is a backend service that accepts any supported social media video URL and returns a direct download link along with the video title and thumbnail â€” all in a clean JSON response.
+The **Universal Social Media Video Downloader API** is a backend service that accepts any supported social media video URL and returns a direct download link along with the video title and thumbnail — all in a clean JSON response.
 
 No frontend needed. No API keys required. Just send a URL and get a downloadable link back.
 
 ---
 
-## âœ¨ Features
+## ✨ Features
 
-- ðŸ”— **Single Endpoint** â€” One route handles all platforms
-- ðŸ¤– **Auto Platform Detection** â€” Automatically identifies YouTube, TikTok, Instagram, and Facebook URLs
-- ðŸš« **No Watermark** â€” TikTok videos are returned without watermarks
-- ðŸ“º **HD Support** â€” Fetches highest available quality for Facebook and YouTube
-- âš¡ **Fast & Lightweight** â€” Minimal dependencies, optimized for speed
-- ðŸŒ **CORS Enabled** â€” Ready for cross-origin frontend integrations
-- ðŸ›¡ï¸ **Error Handling** â€” Graceful responses for invalid URLs, unsupported platforms, and network failures
-- â˜ï¸ **Deploy-Ready** â€” Configured for instant deployment on Render
+- 🔗 **Single Endpoint** — One route handles all platforms
+- 🤖 **Auto Platform Detection** — Automatically identifies YouTube, TikTok, Instagram, and Facebook URLs
+- 🚫 **No Watermark** — TikTok videos are returned without watermarks
+- 📺 **HD Support** — Fetches highest available quality for Facebook and YouTube
+- ⚡ **Fast & Lightweight** — Minimal dependencies, optimized for speed
+- 🌍 **CORS Enabled** — Ready for cross-origin frontend integrations
+- 🛡️ **Error Handling** — Graceful responses for invalid URLs, unsupported platforms, and network failures
+- ☁️ **Deploy-Ready** — Configured for instant deployment on Render
 
 ---
 
-## âœ… Supported Platforms
+## ✅ Supported Platforms
 
 | Platform     | Content Type           | Special Feature           |
 |--------------|------------------------|---------------------------|
-| ðŸŽ¥ YouTube   | Videos & Shorts        | Max quality download      |
-| ðŸŽµ TikTok    | All public videos      | **No watermark**          |
-| ðŸ“¸ Instagram | Reels & Post videos    | Multi-quality support     |
-| ðŸ‘¥ Facebook  | Public watch videos    | **HD preferred over SD**  |
+| 🎥 YouTube   | Videos & Shorts        | Max quality download      |
+| 🎵 TikTok    | All public videos      | **No watermark**          |
+| 📸 Instagram | Reels & Post videos    | Multi-quality support     |
+| 👥 Facebook  | Public watch videos    | **HD preferred over SD**  |
 
 ---
 
-## ðŸ“¡ API Reference
+## 📡 API Reference
 
 ### Base URL
 ```
@@ -77,7 +77,7 @@ https://your-api-name.onrender.com
 ---
 
 ### `GET /`
-Health check â€” returns API status and usage instructions.
+Health check — returns API status and usage instructions.
 
 **Response:**
 ```json
@@ -99,7 +99,7 @@ Main download endpoint. Accepts any supported video URL.
 
 | Parameter | Type   | Required | Description           |
 |-----------|--------|----------|-----------------------|
-| `url`     | string | âœ… Yes   | Full URL of the video |
+| `url`     | string | ✅ Yes   | Full URL of the video |
 
 **Example Requests:**
 ```bash
@@ -121,9 +121,9 @@ GET /download?url=https://www.facebook.com/watch/?v=987654321
 
 ---
 
-## ðŸ“¦ Response Format
+## 📦 Response Format
 
-### âœ… Success
+### ✅ Success
 ```json
 {
   "status": "success",
@@ -134,7 +134,7 @@ GET /download?url=https://www.facebook.com/watch/?v=987654321
 }
 ```
 
-### âŒ Error â€” Unsupported Platform
+### ❌ Error — Unsupported Platform
 ```json
 {
   "status": "error",
@@ -142,7 +142,7 @@ GET /download?url=https://www.facebook.com/watch/?v=987654321
 }
 ```
 
-### âŒ Error â€” Invalid URL
+### ❌ Error — Invalid URL
 ```json
 {
   "status": "error",
@@ -150,7 +150,7 @@ GET /download?url=https://www.facebook.com/watch/?v=987654321
 }
 ```
 
-### âŒ Error â€” Missing Parameter
+### ❌ Error — Missing Parameter
 ```json
 {
   "status": "error",
@@ -158,7 +158,7 @@ GET /download?url=https://www.facebook.com/watch/?v=987654321
 }
 ```
 
-### âŒ Error â€” Extraction Failure
+### ❌ Error — Extraction Failure
 ```json
 {
   "status": "error",
@@ -169,31 +169,31 @@ GET /download?url=https://www.facebook.com/watch/?v=987654321
 
 ---
 
-## ðŸ“ Project Structure
+## 📁 Project Structure
 
 ```
 social-video-downloader/
-â”‚
-â”œâ”€â”€ server.js          â† Main API server (platform handlers + routing)
-â”œâ”€â”€ package.json       â† Project metadata & dependencies
-â”œâ”€â”€ .gitignore         â† Git ignore rules (excludes node_modules)
-â””â”€â”€ README.md          â† Project documentation (this file)
+│
+├── server.js          ← Main API server (platform handlers + routing)
+├── package.json       ← Project metadata & dependencies
+├── .gitignore         ← Git ignore rules (excludes node_modules)
+└── README.md          ← Project documentation (this file)
 ```
 
 ---
 
-## ðŸ› ï¸ Local Development
+## 🛠️ Local Development
 
 Follow these steps to run the API on your local machine.
 
 ### Prerequisites
-- Node.js v18 or later â†’ [Download here](https://nodejs.org)
+- Node.js v18 or later → [Download here](https://nodejs.org)
 - npm (comes with Node.js)
-- Git â†’ [Download here](https://git-scm.com)
+- Git → [Download here](https://git-scm.com)
 
 ---
 
-### Step 1 â€” Clone or create the project
+### Step 1 — Clone or create the project
 
 ```bash
 mkdir social-video-downloader
@@ -204,7 +204,7 @@ Copy `server.js`, `package.json`, `.gitignore`, and `README.md` into the folder.
 
 ---
 
-### Step 2 â€” Install dependencies
+### Step 2 — Install dependencies
 
 ```bash
 npm install
@@ -214,7 +214,7 @@ This installs: `express`, `axios`, and `cors`.
 
 ---
 
-### Step 3 â€” Start the development server
+### Step 3 — Start the development server
 
 ```bash
 npm start
@@ -232,13 +232,13 @@ http://localhost:3000/download?url=https://www.tiktok.com/@user/video/123
 
 ---
 
-## â˜ï¸ Deployment on Render
+## ☁️ Deployment on Render
 
 Render offers **free hosting** for Node.js APIs. Follow these steps to deploy.
 
 ---
 
-### Step 1 â€” Prepare your GitHub repository
+### Step 1 — Prepare your GitHub repository
 
 ```bash
 # Initialize git
@@ -254,15 +254,15 @@ git push -u origin main
 
 ---
 
-### Step 2 â€” Sign up on Render
+### Step 2 — Sign up on Render
 
-Go to ðŸ‘‰ **https://render.com** â†’ Click **"Get Started for Free"**
+Go to 👉 **https://render.com** → Click **"Get Started for Free"**
 
-> ðŸ’¡ Tip: Sign up with your GitHub account for seamless repository access.
+> 💡 Tip: Sign up with your GitHub account for seamless repository access.
 
 ---
 
-### Step 3 â€” Create a New Web Service
+### Step 3 — Create a New Web Service
 
 1. On the Render dashboard, click **"New +"**
 2. Select **"Web Service"**
@@ -270,7 +270,7 @@ Go to ðŸ‘‰ **https://render.com** â†’ Click **"Get Started for Free"*
 
 ---
 
-### Step 4 â€” Connect your GitHub repository
+### Step 4 — Connect your GitHub repository
 
 1. Authorize Render to access your GitHub account
 2. Search for `social-video-downloader`
@@ -278,7 +278,7 @@ Go to ðŸ‘‰ **https://render.com** â†’ Click **"Get Started for Free"*
 
 ---
 
-### Step 5 â€” Configure deployment settings
+### Step 5 — Configure deployment settings
 
 | Setting           | Value                     |
 |-------------------|---------------------------|
@@ -292,7 +292,7 @@ Go to ðŸ‘‰ **https://render.com** â†’ Click **"Get Started for Free"*
 
 ---
 
-### Step 6 â€” Environment Variables
+### Step 6 — Environment Variables
 
 No manual environment variables are needed.
 
@@ -300,7 +300,7 @@ No manual environment variables are needed.
 
 ---
 
-### Step 7 â€” Deploy
+### Step 7 — Deploy
 
 Click **"Create Web Service"**.
 
@@ -310,13 +310,13 @@ Render will:
 3. Execute `npm start`
 4. Assign a live public URL
 
-> â±ï¸ First deployment typically takes **2â€“4 minutes**.
+> ⏱️ First deployment typically takes **2–4 minutes**.
 
 ---
 
-### Step 8 â€” Verify the deployment
+### Step 8 — Verify the deployment
 
-Once the dashboard shows **ðŸŸ¢ Live**, your API is publicly accessible:
+Once the dashboard shows **🟢 Live**, your API is publicly accessible:
 
 ```
 https://social-video-downloader.onrender.com/download?url=VIDEO_URL
@@ -334,7 +334,7 @@ https://social-video-downloader.onrender.com/
 
 ---
 
-### ðŸ”„ Auto-Deploy on Updates
+### 🔄 Auto-Deploy on Updates
 
 Every time you push to the `main` branch, Render automatically redeploys:
 
@@ -346,7 +346,7 @@ git push
 
 ---
 
-## ðŸ§° Tech Stack
+## 🧰 Tech Stack
 
 | Technology        | Purpose                             |
 |-------------------|-------------------------------------|
@@ -361,7 +361,7 @@ git push
 
 ---
 
-## âš ï¸ Important Notes
+## ⚠️ Important Notes
 
 > Please read before deploying to production.
 
@@ -373,7 +373,7 @@ git push
 
 ---
 
-## ðŸ‘¨â€ðŸ’» Developer
+## 👨‍💻 Developer
 
 <div align="center">
 
@@ -394,16 +394,16 @@ git push
 
 ---
 
-## ðŸ“„ License
+## 📄 License
 
-This project is licensed under the **MIT License** â€” you are free to use, modify, and distribute it with attribution.
+This project is licensed under the **MIT License** — you are free to use, modify, and distribute it with attribution.
 
 ---
 
 <div align="center">
 
-**Made with â¤ï¸ by Maim Islam**
+**Made with ❤️ by Maim Islam**
 
-â­ *If this project helped you, consider giving it a star on GitHub!*
+⭐ *If this project helped you, consider giving it a star on GitHub!*
 
 </div>
